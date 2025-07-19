@@ -111,12 +111,12 @@ void gerar_e_imprimir_agendas(std::vector<Corretor>& corretores){
         }
         // Garante a linha em branco entre as agendas.
         if (!primeira_agenda) {
-            std::cout << std::endl;
+            std::cout << '\n';
         }
         primeira_agenda = false;
 
         // Imprime o cabeçalho da agenda do corretor.
-        std::cout << "Corretor " << corretor.getId() << std::endl;
+        std::cout << "Corretor " << corretor.getId() << '\n';
         
         // Prepara as variáveis de estado para a jornada do corretor.
         int tempo_total_minutos = 9 * 60; // começa as 9:00hs
@@ -145,7 +145,7 @@ void gerar_e_imprimir_agendas(std::vector<Corretor>& corretores){
             int minuto = tempo_total_minutos % 60;
             // Formato de saida hora e minuto
             std::cout << std::setfill('0') << std::setw(2) << hora << ":" 
-            << std::setw(2) << minuto << " Imóvel " << imoveis_nao_visitados[indice_do_mais_proximo].getId() << std::endl;
+            << std::setw(2) << minuto << " Imóvel " << imoveis_nao_visitados[indice_do_mais_proximo].getId() << '\n';
 
             // 3. Atualiza o estado para a próxima iteração.
             tempo_total_minutos += 60;
@@ -155,4 +155,5 @@ void gerar_e_imprimir_agendas(std::vector<Corretor>& corretores){
             imoveis_nao_visitados.erase(imoveis_nao_visitados.begin() + indice_do_mais_proximo);
         }
     }
-}
+}    
+
